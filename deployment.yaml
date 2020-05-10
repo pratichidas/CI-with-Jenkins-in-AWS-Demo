@@ -17,7 +17,7 @@
     spec:
      containers:
      - name: demoapp
-       image: sanjay255/k8s:tagversion
+       image: pratichidas_docker/demoapp:tagversion
        ports:
        - containerPort: 8080
 
