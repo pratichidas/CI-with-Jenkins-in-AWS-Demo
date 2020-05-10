@@ -2,10 +2,10 @@ pipeline {
 	    agent any 	
 		environment {
 			
-			PROJECT_ID = 'canvas-advice-275919'
-	                CLUSTER_NAME = 'k8'
+			PROJECT_ID = 'K8s-pratichi'
+	                CLUSTER_NAME = 'K8s-demo'
 	                LOCATION = 'europe-west2-c'
-	                CREDENTIALS_ID = 'K8'
+	                CREDENTIALS_ID = 'K8s-pratichi'
 		}
 		
 	    stages {	
@@ -30,14 +30,14 @@ pipeline {
 		   stage('Build Docker Image') { 
 			steps {
 	                   script {
-	                      myapp = docker.build("sanjay255/k8s:${env.BUILD_ID}")
+	                      myapp = docker.build("pratichidas/K8s-pratichi:${env.BUILD_ID}")
 	                   }
 	                }
 		   }
 		   stage("Push Docker Image") {
 	                steps {
 	                   script {
-			      docker.withRegistry('https://registry.hub.docker.com', 'eb69496a-60e6-442c-9b42-e69ae0aa128c') {
+			      docker.withRegistry('https://registry.hub.docker.com', 'Docker') {
 	                            myapp.push("${env.BUILD_ID}")		
 	                     }
 				   
