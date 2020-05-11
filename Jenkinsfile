@@ -37,7 +37,7 @@ pipeline {
 		   stage("Push Docker Image") {
 	                steps {
 	                   script {
-			      docker.withRegistry('https://registry.hub.docker.com', 'Docker') {
+			      docker.withRegistry('https://registry.hub.docker.com', 'pratichidas_docker') {
 	                            myapp.push("${env.BUILD_ID}")		
 	                     }
 				   
