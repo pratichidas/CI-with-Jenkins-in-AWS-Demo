@@ -2,21 +2,21 @@
  apiVersion: apps/v1
  kind: Deployment
  metadata:
-  name: demoapp
+  name: mydemoapp
   labels:
-   app: demoapp
+   app: mydemoapp
  spec:
   replicas: 1 
   selector:
    matchLabels:
-    app: demoapp
+    app: mydemoapp
    template:
     metadata: 
      labels:
-      app: demoapp
+      app: mydemoapp
     spec:
      containers:
-     - name: demoapp
+     - name: mydemoapp
        image: pratichidas/k8sdemo:tagversion
        ports:
        - containerPort: 8080
@@ -25,11 +25,11 @@
  apiVersion: v1
  kind: Service
  metadata:
-  name: demoapp
+  name: mydemoapp
  spec:
   type: LoadBalancer
   selector:
-   app: demoapp
+   app: mydemoapp
   ports:
    - protocol: TCP
      port: 80
