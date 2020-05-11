@@ -17,7 +17,7 @@
     spec:
      containers:
      - name: demoapp
-       image: pratichidas_docker/demoapp:tagversion
+       image: pratichidas/k8sdemo:tagversion
        ports:
        - containerPort: 8080
 
