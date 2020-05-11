@@ -2,22 +2,22 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
- name: mydemoapp
+ name: demogcrapp
  labels:
-   app: mydemoapp
+   app: demogcrapp
 spec:
  replicas: 1
  selector:
   matchLabels:
-   app: mydemoapp
+   app: demogcrapp
  template:
   metadata:
    labels:
-    app: mydemoapp
+    app: demogcrapp
   spec:
    containers:
-   - name: mydemoapp
-     image: pratichidas/k8sdemo:tagversion
+   - name: demogcrapp
+     image: gcr.io/sincere-idea-275411/pratichidas/demogcrapp:tagversion
      ports:
      - containerPort: 8080
 
@@ -25,12 +25,12 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
- name: mydemoapp
+ name: demogcrapp
 spec:
  type: LoadBalancer
  selector:
-  app: mydemoapp
+  app: demogcrapp
  ports:
   - protocol: TCP
-    port: 5602
+    port: 5566
     targetPort: 8080
