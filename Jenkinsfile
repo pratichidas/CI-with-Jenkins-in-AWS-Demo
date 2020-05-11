@@ -4,7 +4,7 @@ pipeline {
 		PROJECT_ID = 'sincere-idea-275411'
 		CLUSTER_NAME = 'k8cluster-pratichi'
 		LOCATION = 'europe-west1-c'
-		CREDENTIALS_ID = 'K8s'
+		CREDENTIALS_ID = 'K8'
 	}
 	stages {	
 		stage('SCM Checkout') {            
