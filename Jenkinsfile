@@ -27,7 +27,7 @@ pipeline {
 		stage('Build Docker Image') { 
 			steps {
 				script {
-					myapp = docker.build("eu.gcr.io/sincere-idea-275411/pratichidas/demogcrapp:${env.BUILD_ID}")
+					myapp = docker.build("gcr.io/sincere-idea-275411/pratichidas/demogcrapp:${env.BUILD_ID}")
 				}
 			}
 		}
