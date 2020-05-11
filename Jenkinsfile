@@ -2,7 +2,7 @@ pipeline {
 	agent any 	
 	environment {
 		PROJECT_ID = 'sincere-idea-275411'
-		CLUSTER_NAME = 'k8cluster-pratichi'
+		CLUSTER_NAME = 'k8cluster'
 		LOCATION = 'europe-west1-c'
 		CREDENTIALS_ID = 'K8'
 	}
