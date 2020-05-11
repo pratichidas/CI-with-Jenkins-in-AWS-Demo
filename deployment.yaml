@@ -17,7 +17,7 @@ spec:
   spec:
    containers:
    - name: mydemoapp
-     image: pratichidas/mydemoapp:tagversion
+     image: pratichidas/k8sdemo:tagversion
      ports:
      - containerPort: 8080
 
