@@ -30,14 +30,14 @@ pipeline {
 		   stage('Build Docker Image') { 
 			steps {
 	                   script {
-	                      myapp = docker.build("pratichidas_docker/demoapp:${env.BUILD_ID}")
+	                      myapp = docker.build("pratichidas/k8sdemo:${env.BUILD_ID}")
 	                   }
 	                }
 		   }
 		   stage("Push Docker Image") {
 	                steps {
 	                   script {
-			      docker.withRegistry('https://registry.hub.docker.com', 'pratichidas_docker') {
+			      docker.withRegistry('https://registry.hub.docker.com', 'Docker') {
 	                            myapp.push("${env.BUILD_ID}")		
 	                     }
 				   
