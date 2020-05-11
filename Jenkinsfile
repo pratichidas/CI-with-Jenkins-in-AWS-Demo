@@ -27,14 +27,14 @@ pipeline {
 		stage('Build Docker Image') { 
 			steps {
 				script {
-					myapp = docker.build("pratichidas/k8sdemo:${env.BUILD_ID}")
+					myapp = docker.build("eu.gcr.io/sincere-idea-275411/pratichidas/demogcrapp:${env.BUILD_ID}")
 				}
 			}
 		}
 		stage("Push Docker Image") {
 			steps {
 				script {
-					docker.withRegistry('https://registry.hub.docker.com', 'Docker') {
+					docker.withRegistry('https://gcr.io') {
 						myapp.push("${env.BUILD_ID}")		
 					}
 				}
