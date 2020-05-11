@@ -2,9 +2,9 @@ pipeline {
 	agent any 	
 	environment {
 		PROJECT_ID = 'sincere-idea-275411'
-		CLUSTER_NAME = 'gs-pratichi'
-		LOCATION = 'us-central1-c'
-		CREDENTIALS_ID = 'K8s-pratichi'
+		CLUSTER_NAME = 'k8cluster-pratichi'
+		LOCATION = 'europe-west1-c'
+		CREDENTIALS_ID = 'K8s'
 	}
 	stages {	
 		stage('SCM Checkout') {            
