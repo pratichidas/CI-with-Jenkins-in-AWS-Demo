@@ -2,10 +2,10 @@ pipeline {
 	    agent any 	
 		environment {
 			
-			PROJECT_ID = 'sincere-idea-275411'
+			PROJECT_ID = 'K8s-pratichi'
 	                CLUSTER_NAME = 'K8s-demo'
-	                LOCATION = 'europe-west2-c'
-	                CREDENTIALS_ID = 'sincere-idea-275411'
+	                LOCATION = 'us-central1-c'
+	                CREDENTIALS_ID = 'K8s-pratichi'
 		}
 		
 	    stages {	
