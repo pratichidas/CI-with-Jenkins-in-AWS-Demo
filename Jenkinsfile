@@ -4,7 +4,7 @@ pipeline {
 		PROJECT_ID = 'sincere-idea-275411'
 		CLUSTER_NAME = 'k8cluster'
 		LOCATION = 'europe-west1-c'
-		CREDENTIALS_ID = 'demo-gcr'
+		CREDENTIALS_ID = 'K8'
 	}
 	stages {	
 		stage('SCM Checkout') {            
@@ -27,14 +27,14 @@ pipeline {
 		stage('Build Docker Image') { 
 			steps {
 				script {
-					myapp = docker.build("eu.gcr.io/sincere-idea-275411/pratichidas/demogcrapp:${env.BUILD_ID}")
+					myapp = docker.build("gcr.io/sincere-idea-275411/pratichidas/demogcrapp:${env.BUILD_ID}")
 				}
 			}
 		}
 		stage("Push Docker Image") {
 			steps {
 				script {
-					docker.withRegistry('https://eu.gcr.io') {
+					docker.withRegistry('https://gcr.io') {
 						myapp.push("${env.BUILD_ID}")		
 					}
 				}
