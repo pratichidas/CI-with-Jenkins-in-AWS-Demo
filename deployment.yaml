@@ -17,7 +17,7 @@ spec:
   spec:
    containers:
    - name: demogcrapp
-     image: eu.gcr.io/sincere-idea-275411/pratichidas/demogcrapp:tagversion
+     image: gcr.io/sincere-idea-275411/pratichidas/demogcrapp:tagversion
      ports:
      - containerPort: 8080
 
